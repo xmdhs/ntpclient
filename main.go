@@ -42,9 +42,11 @@ func main() {
 	}
 	fmt.Println(bf.String())
 
-	var b = make([]byte, 4)
-	binary.BigEndian.PutUint32(b, r.ReferenceID)
-	fmt.Printf("reference: %v\n", string(b))
+	if r.Stratum == 1 {
+		var b = make([]byte, 4)
+		binary.BigEndian.PutUint32(b, r.ReferenceID)
+		fmt.Printf("reference: %v\n", string(b))
+	}
 	fmt.Printf("server: %v (%v)\n", ntpServer, selectIp)
 	fmt.Printf("offset: %v\n", r.ClockOffset)
 	fmt.Printf("rtt: %v\n", r.RTT)

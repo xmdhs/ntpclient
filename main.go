@@ -15,7 +15,7 @@ import (
 var ntpServer string
 
 func init() {
-	flag.StringVar(&ntpServer, "n", "pool.ntp.org", "")
+	flag.StringVar(&ntpServer, "n", "time.apple.com", "")
 	flag.Parse()
 }
 
